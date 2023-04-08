@@ -47,7 +47,8 @@ public class BatchConfiguration {
 	@Bean
 	public ItemProcessor<Place, Place> itemProcessor() {
 		return place -> {
-			place.decreaseTotalScore((long)(place.getTotalScore() * 0.9));
+			place.decreaseTotalScore((long)(place.getTotalScore() * 0.9)); 
+			//추천 기준인 place의 totalScore에 하루에 한 번 0.9를 곱하여 이전 데이터의 중요도를 낮춤
 			return place;
 		};
 	}
